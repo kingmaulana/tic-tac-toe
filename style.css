@@ -1,0 +1,22 @@
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+tr, td {
+    border: 1px solid black;
+    padding: 25px;
+    width: 4rem;
+    height: 4rem;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+button {
+    width: 8rem;
+    height: 2rem;
+    border: 1px solid rgb(133, 118, 96);
+    border-radius: 1rem;
+    background-color: navajowhite;
+    margin-top: 1rem;
+}
