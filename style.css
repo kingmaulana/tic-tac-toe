@@ -38,6 +38,16 @@ table {
     margin: 0 auto;
 }
 
+@media only screen and (max-width: 600px) {
+    table {
+        margin: 4.5rem auto;
+    }
+    h1 span{
+        display: block;
+        font-size: 2.5rem;
+    }
+  }
+
 .main-title {
     text-align: center;
     font-size: 4rem;
