@@ -25,7 +25,7 @@ function checkGame() {
                 scorePl2.innerText = scoreO;
                 resetGame();
             }
-            console.log('WIN Horizontal 1');
+            // console.log('WIN Horizontal 1');
         } 
         if(input2[i] === input2[i + 1] && input2[i + 1] == input2[i + 2] && input2[i] !== '') {
             if(playerOne.turn === false) {
@@ -37,7 +37,7 @@ function checkGame() {
                 scorePl2.innerText = scoreO;
                 resetGame();
             }
-            console.log('WIN Horizontal 2');
+            // console.log('WIN Horizontal 2');
         } 
         if(input3[i] === input3[i + 1] && input3[i + 1] == input3[i + 2] && input3[i] !== '') {
             if(playerOne.turn === false) {
@@ -49,7 +49,7 @@ function checkGame() {
                 scorePl2.innerText = scoreO;
                 resetGame();
             }
-            console.log('WIN Horizontal 3');
+            // console.log('WIN Horizontal 3');
         } 
 
     }
@@ -65,7 +65,7 @@ function checkGame() {
                 scorePl2.innerText = scoreO;
                 resetGame();
             }
-            console.log("OK Vertical 1");
+            // console.log("OK Vertical 1");
             break;
         }
         if(input1[1] === input2[1] && input2[1] === input3[1] && input3[1] && input1[1] && input2[1]) {
@@ -78,7 +78,7 @@ function checkGame() {
                 scorePl2.innerText = scoreO;
                 resetGame();
             }
-            console.log("OK Vertical 2");
+            // console.log("OK Vertical 2");
             break;
         }
         if(input1[2] === input2[2] && input2[2] === input3[2] && input3[2] && input1[2] && input2[2]) {
@@ -91,7 +91,7 @@ function checkGame() {
                 scorePl2.innerText = scoreO;
                 resetGame();
             }
-            console.log("OK Vertical 3");
+            // console.log("OK Vertical 3");
             break;
         }
     }
@@ -107,7 +107,7 @@ function checkGame() {
                 scorePl2.innerText = scoreO;
                 resetGame();
             }
-            console.log("OK Cross 1");
+            // console.log("OK Cross 1");
             break;
         }
         if(input1[2] === input2[1] && input2[1] === input3[0] && input3[0] && input1[2] && input2[1]) {
@@ -120,9 +120,14 @@ function checkGame() {
                 scorePl2.innerText = scoreO;
                 resetGame();
             }
-            console.log("OK Cross 2");
+            // console.log("OK Cross 2");
             break;
         }
+    }
+
+    if(input1[0] && input1[1] && input1[2] && input2[0] && input2[1] && input2[2] && input3[0] && input3[1] && input3[2]) {
+        console.log('DRAW');
+        resetGame();
     }
 }
 
@@ -226,12 +231,17 @@ buttonReset.addEventListener('click', () => {
 // who first reach 3 point score will declare as a winner an reset
 function checkWinner() {
     if(scoreX === 3) {
-        console.log('Player 1 is the winner');
+        showWinner('PLAYER ONE');
         resetGame();
         resetScore();
     } else if(scoreO === 3) {
-        console.log('Player 2 is the winner');
+        showWinner('PLAYER TWO');
         resetGame();
         resetScore();
     }
+}
+
+function showWinner(player) {
+    const h1Winner = document.querySelector('.result');
+    h1Winner.innerText = `The Winner Is ${player}`;
 }
